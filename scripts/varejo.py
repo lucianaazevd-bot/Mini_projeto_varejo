@@ -1,0 +1,36 @@
+import pandas as pd
+df = pd.read_csv('Dados/Base Varejo.csv', sep=';')
+print('Base carregada!')
+print(df.shape)
+print('\ncolunas')
+print(df.columns)
+print('\ntipos')
+print(df.dtypes)
+print('\nNulos')
+print(df.isnull().sum())
+print('\nDuplicatas')
+print(df.duplicated().sum())
+print('\nAmostra')
+print(df.head())
+print('\n===============')
+print('Diagnostico Qualidade')
+print('===============')
+print('nNulos por coluna')
+print(df.isnull().sum())
+duplicatas = df.duplicated().sum()
+print('\ntotal duplicatas')
+print(duplicatas)
+print('\ncategorias vazias')
+if "PR_CAT" in df.columns:
+    categorias_vazias = (df['PR_CAT'].isnull().sum())
+    print(categorias_vazias)
+else:
+    print("Coluna PR_CAT nao encontrada")
+print('\nVERIFICANDO DATAS')
+df['DATA'] = pd.to_datetime(df['DATA'],dayfirst=True, errors='coerce')
+datas_invalidas = df['DATA'].isnull().sum()
+print('\ntotal datas invalidas')
+print(datas_invalidas)
+
+
+
