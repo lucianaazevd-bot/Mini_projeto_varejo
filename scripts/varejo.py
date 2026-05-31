@@ -34,6 +34,18 @@ print(datas_invalidas)
 df = df.drop_duplicates()
 print("\nNovo tamanho após remover duplicatas:")
 print(df.shape)
+print(df.columns)
+print("\nESTATISTICA DESCRITIVA - FILHOS")
+print("contagem:", df['CL_FHL'].count())
+print("media:", df['CL_FHL'].mean())
+print("mediana:", df['CL_FHL'].median())
+print("Moda:", df['CL_FHL'].mode())
+print("desvio padrao:", df['CL_FHL'].std())
+print("minimo:", df['CL_FHL'].min())
+print("maximo:", df['CL_FHL'].max())
+print("\nQuartis:")
+print(df['CL_FHL'].describe())
+
 
 
 
