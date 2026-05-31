@@ -31,6 +31,9 @@ df['DATA'] = pd.to_datetime(df['DATA'],dayfirst=True, errors='coerce')
 datas_invalidas = df['DATA'].isnull().sum()
 print('\ntotal datas invalidas')
 print(datas_invalidas)
+df = df.drop_duplicates()
+print("\nNovo tamanho após remover duplicatas:")
+print(df.shape)
 
 
 
