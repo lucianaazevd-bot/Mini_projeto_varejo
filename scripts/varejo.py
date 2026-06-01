@@ -80,6 +80,7 @@ print(df["PR_CAT"].value_counts())
 print("\n=== vendas por categoria ===")
 print(df.groupby("PR_CAT")["CO_ID"].count())
 
+
  
 
 
