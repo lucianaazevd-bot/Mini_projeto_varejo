@@ -45,6 +45,30 @@ print("minimo:", df['CL_FHL'].min())
 print("maximo:", df['CL_FHL'].max())
 print("\nQuartis:")
 print(df['CL_FHL'].describe())
+import matplotlib.pyplot as plt
+#df["CL_FHL"].hist(bins=10)
+#plt.title("distribuição do numero de filhos(CL_FHL)")
+#plt.xlabel("numero de filhos")
+#plt.ylabel("frequencia")
+#plt.show()
+import matplotlib.pyplot as plt
+#plt.show()
+df.columns
+print("\n=== Quantidade de clientes por genero ===")
+print(df['CL_GENERO'].value_counts())
+print('cheguei aqui')
+print(df['CL_FHL'].describe())
+print('vou contar generos')
+print(df['CL_GENERO'].value_counts())
+
+
+
+
+
+
+
+
+
 
 
 
