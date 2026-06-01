@@ -60,6 +60,24 @@ print('cheguei aqui')
 print(df['CL_FHL'].describe())
 print('vou contar generos')
 print(df['CL_GENERO'].value_counts())
+print("\n=== COLUNAS DA BASE ===")
+print(df.columns.tolist())
+df = df.drop(columns=[col for col in df.columns if "Unnamed" in col])
+print("\n=== Clientes por genero ===")
+print(df.groupby("CL_GENERO")["CL_ID"].nunique())
+print("\n=== Media de filhos por genero ===")
+print(df.groupby("CL_GENERO")["CL_FHL"].mean())
+print("\n=== Clientes por estado civil ===")
+print(df.groupby("CL_EC")["CL_ID"].nunique())
+print("\n=== Produtos mais vendidos ===")
+print(df["PR_NOME"].value_counts().head(10))
+print("\n=== Categorias mais vendidas ===")
+print(df["PR_CAT"].value_counts())
+print("\n=== vendas por categoria ===")
+print(df.groupby("PR_CAT")["CO_ID"].count())
+
+
+
 
 
 
