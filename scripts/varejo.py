@@ -79,6 +79,25 @@ print("\n=== Categorias mais vendidas ===")
 print(df["PR_CAT"].value_counts())
 print("\n=== vendas por categoria ===")
 print(df.groupby("PR_CAT")["CO_ID"].count())
+print("\n===========")
+print("Insights finais")
+print("===========")
+print("\n1.genero com mais clientes:")
+print(df['CL_GENERO'].value_counts())
+print("\n2.categoria mais vendida:")
+print(df["PR_CAT"].value_counts())
+print("\n3. Top 5 produtos mais vendidos:")
+print(df['PR_NOME'].value_counts().head(5))
+print("\n4. Distribuição de filhos:")
+print(df['CL_FHL'].value_counts().sort_index())
+print("\n5. Qualidade dos dados:")
+print("Nulos por coluna:\n", df.isnull().sum())
+print("Duplicatas:", df.duplicated().sum())
+
+
+
+
+
 
 
  
